@@ -129,21 +129,21 @@ class QueriesInfo:
             self.var_map[query_x] = ((self.query_map[query_x] - 1) * (self.var_map[query_x] + (new_mean_map - self.mean_map[query_x]) ** 2) + (query_y - self.mean_map[query_x]) ** 2) / self.query_map[query_x]
             self.mean_map[query_x] = new_mean_map
 
-    def mat2vec(self, mat, ch2xy):
-        """
-        Converts a matrix to a vector based on a given mapping.
-
-        Args:
-            mat (np.ndarray): The input matrix.
-            ch2xy (list): A list of coordinates to extract from the matrix.
-
-        Returns:
-            np.ndarray: A vector containing the values from the matrix at the specified coordinates.
-        """
-        vec = np.zeros(len(ch2xy))
-        for i in range(len(ch2xy)):
-            vec[i] = mat[*(ch2xy[i] - 1)]
-        return vec
+    #def mat2vec(self, mat, ch2xy):
+    #    """
+    #    Converts a matrix to a vector based on a given mapping.
+#
+    #    Args:
+    #        mat (np.ndarray): The input matrix.
+    #        ch2xy (list): A list of coordinates to extract from the matrix.
+#
+    #    Returns:
+    #        np.ndarray: A vector containing the values from the matrix at the specified coordinates.
+    #    """
+    #    vec = np.zeros(len(ch2xy))
+    #    for i in range(len(ch2xy)):
+    #        vec[i] = mat[*(ch2xy[i] - 1)]
+    #    return vec
 
     def idx2coord(self, idx):
         """
